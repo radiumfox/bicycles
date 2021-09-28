@@ -1,0 +1,26 @@
+@mixin placeholder {
+  &::placeholder {
+    font-size: 14px;
+    line-height: 17px;
+    color: $basic-darkest;
+    font-family: "Montserrat", "Verdana", sans-serif;
+    opacity: 1;
+
+    @media (max-width: $mobile-width-only) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin font($font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}

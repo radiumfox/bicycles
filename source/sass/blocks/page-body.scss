@@ -1,0 +1,11 @@
+.page-body {
+  @include font(16px, 28px, normal);
+  font-family: "Open Sans", "Verdana", sans-serif;
+  background-color: $basic-light;
+  color: $basic-dark;
+  min-height: 100%;
+  min-width: 320px;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
