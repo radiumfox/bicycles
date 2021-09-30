@@ -1,21 +1,14 @@
-root: true
-
-env:
-  browser: true
-
-extends:
-  "htmlacademy/es5"
-
 {
+  "root": true,
+
+  "extends": "htmlacademy/es5",
+
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+    "ecmaVersion": 2017
   },
+
   "env": {
-    "es2017": true,
+    "es6": true,
     "browser": true
-  },
-  "extends": "htmlacademy/vanilla",
-  "rules": {
   }
 }
