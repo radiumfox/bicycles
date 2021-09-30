@@ -12,6 +12,10 @@
     <header class="page-header">
       <div class="page-header__wrapper">
         <nav class="main-nav main-nav--closed main-nav--nojs">
+          <!-- main-nav--closed - меню закрыто, кнопка-гамбургер;
+            main-nav--opened - меню открыто, кнопка-крестик;
+            main-nav--no-js - поведение меню при отключенном JS, кнопок нет -->
+          <img src="img/logo.svg" width="68" height="20" alt="Логотип">
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
@@ -39,10 +43,12 @@
       <section class="intro">
         <div class="intro__wrapper">
           <h2 class="visually-hidden">Вводная информация</h2>
-          <div class="intro__content">
-            <img src="img/logo.svg" width="68" height="20" alt="Логотип">
-            <p>Мы продаем велосипеды</p>
-            <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
+          <div class="intro__content-box">
+            <div class="intro__content">
+              <img src="img/logo.svg" width="68" height="20" alt="Логотип">
+              <h3>Мы продаем велосипеды</h3>
+              <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
+            </div>
           </div>
           <form class="intro__form" action="#" method="POST">
             <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
@@ -55,7 +61,7 @@
         </div>
       </section>
 
-      <section class="about" id="about">
+      <!-- <section class="about" id="about">
         <div class="about__wrapper">
           <h2>Несколько фактов о нас</h2>
           <ul>
@@ -65,9 +71,9 @@
             <li>Профессиональные консультации!</li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
-      <section class="bicycles" id="bicycles">
+      <!-- <section class="bicycles" id="bicycles">
         <div class="bicycles__wrapper">
           <h2>Виды велосипедов</h2>
           <ul>
@@ -75,7 +81,7 @@
               <picture>
                 <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/andreas-haimer-tabl.webp 1x, img/bicycles/andreas-haimer-tabl@2x.webp 2x">
                 <source type="image/webp" srcset="img/bicycles/andreas-haimer.webp 1x, img/bicycles/andreas-haimer@2x.webp 2x">
-                <!-- 1х: 342px; 2x: 684px -->
+                1х: 342px; 2x: 684px
                 <img src="img/bicycles/andreas-haimer.jpg" width="342" height="503" alt="Велосипед">
               </picture>
               <p>Дорожный велосипед</p>
@@ -84,7 +90,7 @@
               <picture>
                 <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/eberhard-grossgasteiger-tabl.webp 1x, img/bicycles/eberhard-grossgasteiger-tabl@2x.webp 2x">
                 <source type="image/webp" srcset="img/bicycles/eberhard-grossgasteiger.webp 1x, img/bicycles/eberhard-grossgasteiger@2x.webp 2x">
-                <!-- 1х: 342px; 2x: 684px -->
+                1х: 342px; 2x: 684px
                 <img src="img/bicycles/eberhard-grossgasteiger.jpg" width="342" height="566" alt="Велосипед">
               </picture>
               <p>Горный велосипед</p>
@@ -93,31 +99,31 @@
               <picture>
                 <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/roger-goh-tabl.webp 1x, img/bicycles/roger-goh-tabl@2x.webp 2x">
                 <source type="image/webp" srcset="img/bicycles/roger-goh.webp 1x, img/bicycles/roger-goh@2x.webp 2x">
-                <!-- 1х: 342px; 2x: 684px -->
+                1х: 342px; 2x: 684px
                 <img src="img/bicycles/roger-goh.jpg" width="342" height="512" alt="Велосипед">
               </picture>
               <p>Детский велосипед</p>
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
-      <section class="promo"  id="promo-video">
+      <!-- <section class="promo"  id="promo-video">
         <div class="promo__wrapper">
           <h2>Видео про велосипеды</h2>
           <picture>
             <source type="image/webp" media="(max-width: 767px)" srcset="img/preview-mob.webp 1x, img/preview-mob@2x.webp 2x">
             <source type="image/webp" media="(max-width: 1023px)" srcset="img/preview-tabl.webp 1x, img/preview-tabl@2x.webp 2x">
             <source type="image/webp" srcset="img/preview-desk.webp 1x, img/preview-desk@2x.webp 2x">
-            <!-- 1х: 929px; 2x: 1858px -->
+            1х: 929px; 2x: 1858px
             <img src="img/preview-desk.jpg" width="929" height="522" alt="Превью промо-ролика">
           </picture>
           <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.</p>
         </div>
-      </section>
+      </section>  -->
     </main>
 
-    <footer class="page-footer" id="contacts">
+    <!-- <footer class="page-footer" id="contacts">
       <div class="page-footer__wrapper">
         <p>Как нас найти?</p>
         <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
@@ -141,6 +147,7 @@
           </li>
         </ul>
       </div>
-    </footer>
+    </footer> -->
+    <script src="js/main-nav.js"></script>
   </body>
 </html>

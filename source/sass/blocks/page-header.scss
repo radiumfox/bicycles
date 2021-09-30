@@ -1,0 +1,10 @@
+.page-header__wrapper {
+  max-width: 873px;
+  margin: 0 auto;
+  padding-top: 21px;
+
+  @media (max-width: $tablet-width-only) {
+    max-width: 100%;
+    padding: 0;
+  }
+}

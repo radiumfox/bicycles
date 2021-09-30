@@ -30,3 +30,14 @@
     url("../fonts/opensanssemibold.woff2") format("woff2"),
     url("../fonts/opensanssemibold.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("opensansbold"),
+    url("../fonts/opensansbold.woff2") format("woff2"),
+    url("../fonts/opensansbold.woff") format("woff");
+}
