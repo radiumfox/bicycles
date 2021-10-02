@@ -2,11 +2,11 @@
   max-width: 1166px;
   margin: 150px auto 130px;
 
-
   @media (max-width: $tablet-width-only) {
     padding: 0 10px;
     max-width: 620px;
     margin-top: 70px;
+    margin-bottom: 70px;
   }
 }
 
