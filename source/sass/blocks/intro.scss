@@ -44,6 +44,9 @@
   }
 }
 
+.intro__form-wrapper {
+  position: relative;
+}
 
 .intro__content-box {
   position: relative;
@@ -169,7 +172,7 @@
   }
 }
 
-.intro__form input {
+.intro__form-input {
   @include placeholder;
   background-color: $basic-light;
   padding: 15px;
@@ -182,6 +185,16 @@
   &:active {
     border-color: rgba($basic-dark, 0.4);
     outline: none;
+  }
+
+  &--invalid:focus {
+    background-color: $input-invalid;
+    border-color: $input-invalid;
+  }
+
+  &--invalid {
+    background-color: $input-invalid;
+    border-color: $input-invalid;
   }
 
   @media (max-width: $tablet-width-only) {
