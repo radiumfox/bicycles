@@ -61,14 +61,14 @@
   margin-right: 20px;
 
   &:last-child {
-    margin-top: 0;
+    margin-right: 0;
   }
 
   @media (max-width: $tablet-width-only) {
     padding: 17px 16px;
     background-color: $secondary-light;
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 26px;
 
     background-image: url("../img/icons/arrow.svg");
     background-size: 14px 14px;
@@ -187,8 +187,8 @@
     display: inline-block;
     width: 69px;
     height: 21px;
-    margin-top: 16px;
-    margin-left: 20px;
+    margin-top: 18px;
+    margin-left: 18px;
   }
 }
 

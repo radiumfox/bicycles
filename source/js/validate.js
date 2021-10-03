@@ -23,7 +23,7 @@ inputPhone.addEventListener('input', onPhoneInput);
 const introFormWrapper = document.querySelector('.intro__form-wrapper');
 const requestForm = introFormWrapper.querySelector('.intro__form');
 const successMessageTemplate = document.querySelector('#success-message').content.querySelector('.success-message');
-const closeButton = successMessageTemplate.querySelector('.success-message__close');
+const closeButton = document.querySelector('.success-message__close');
 
 const detectEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
@@ -35,13 +35,14 @@ const removeMessage = () => {
 const onEscPress = (evt) => {
   if (detectEscEvent(evt)) {
     removeMessage();
-    requestForm.style.display = 'flex';
+    requestForm.classList.remove('intro__form--hide');
     document.removeEventListener('keydown', onEscPress);
   }
 };
 
 const onButtonPress = () => {
   removeMessage();
+  requestForm.classList.remove('intro__form--hide');
   closeButton.removeEventListener('click', onButtonPress);
 };
 
@@ -54,8 +55,8 @@ requestForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (phoneRegExp.test(inputPhone.value)) {
     showSuccessMessage();
-    requestForm.style.display = 'none';
+    requestForm.classList.add('intro__form--hide');
     document.addEventListener('keydown', onEscPress);
-    closeButton.addEventListener('click', onButtonPress);
+    document.querySelector('.success-message__close').addEventListener('click', onButtonPress);
   }
 });

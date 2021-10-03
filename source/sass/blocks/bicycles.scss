@@ -3,9 +3,9 @@
 }
 
 .bicycles__wrapper {
-  max-width: 1222px;
+  max-width: 1245px;
   margin: 0 auto;
-  padding: 149px 0 147px;
+  padding: 155px 0 147px;
   overflow-x: hidden;
 
   @media (max-width: $tablet-width-only) {
@@ -13,7 +13,7 @@
   }
 
   @media (max-width: $mobile-width-only) {
-    padding: 50px 16px 52px;
+    padding: 52px 16px 52px;
   }
 }
 
@@ -41,11 +41,12 @@
 .bicycles h2 {
   @include font(30px, 30px, 600);
   text-align: center;
-  padding-bottom: 61px;
+  padding-bottom: 57px;
   margin: 0;
 
   @media (max-width: $tablet-width-only) {
     @include font(24px, 41px, 600);
+    padding-bottom: 30px;
   }
 }
 
@@ -54,12 +55,16 @@
   z-index: 10;
 
   @media (max-width: $tablet-width-only) {
-    padding-bottom: 50px;
+    padding-bottom: 52px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    padding-bottom: 44px;
   }
 }
 
 .bicycles li:nth-child(even) {
-  padding-top: 39px;
+  padding-top: 30px;
 
   &::before,
   &::after {
@@ -71,7 +76,7 @@
   }
 
   &::before {
-    top: 19px;
+    top: 15px;
     left: -19px;
   }
 
@@ -136,7 +141,7 @@
     height: 126px;
     border: 27px solid $accent-primary;
     border-radius: 50%;
-    left: -14%;
+    left: -16%;
     top: calc(35% - 68px);
     z-index: -1;
   }
@@ -163,4 +168,13 @@
   text-align: center;
   margin: 0;
   padding-top: 20px;
+
+  @media (max-width: $tablet-width-only) {
+    padding-top: 17px;
+    letter-spacing: -0.5px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    padding-top: 20px;
+  }
 }

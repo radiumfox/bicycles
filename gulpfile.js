@@ -81,12 +81,12 @@ gulp.task('webp', function () {
 });
 
 gulp.task('sprite', function () {
-  return gulp.src('source/img/{icon-*,htmlacademy*}.svg')
+  return gulp.src('source/img/icons/*.svg')
       .pipe(svgSymbols({
         templates: ['default-svg']
       }))
-      .pipe(rename('sprite_auto.svg'))
-      .pipe(gulp.dest('build/img'));
+      .pipe(rename('sprite.svg'))
+      .pipe(gulp.dest('build/img/icons'));
 });
 
 gulp.task('html', function () {

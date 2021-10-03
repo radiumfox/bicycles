@@ -1,24 +1,28 @@
 .promo {
-  background: linear-gradient(to bottom, $secondary-dark 90%, $basic-light 90%, $basic-light 100%);
+  background: linear-gradient(to bottom, $secondary-dark 88%, $basic-light 88%, $basic-light 100%);
 
   @media (max-width: $tablet-width-only) {
-    background: linear-gradient(to bottom, $secondary-dark 85%, $basic-light 85%, $basic-light 100%);
+    background: linear-gradient(to bottom, $secondary-dark 83%, $basic-light 83%, $basic-light 100%);
   }
 
   @media (max-width: $mobile-width-only) {
-    background: linear-gradient(to bottom, $secondary-dark 88%, $basic-light 88%, $basic-light 100%);
+    background: linear-gradient(to bottom, $secondary-dark 89%, $basic-light 89%, $basic-light 100%);
   }
-};
+}
 
 .promo__wrapper {
   position: relative;
-  padding-top: 120px;
+  padding-top: 125px;
   max-width: 929px;
   margin: 0 auto;
 
   @media (max-width: $tablet-width-only) {
     max-width: 503px;
     padding: 70px 16px 0;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    padding-top: 85px;
   }
 }
 
@@ -49,6 +53,7 @@
 
   @media (max-width: $mobile-width-only) {
     padding-bottom: 50px;
+    letter-spacing: -0.2px;
   }
 }
 
@@ -62,7 +67,7 @@
   background-image: url("../img/icons/play-icon.svg");
   background-size: cover;
   left: calc(50% - 36px);
-  bottom: 200px;
+  bottom: 230px;
 
   &::before {
     content: "";
@@ -109,7 +114,6 @@
       height: 65px;
     }
   }
-
 }
 
 .promo img {
