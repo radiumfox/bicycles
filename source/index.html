@@ -21,16 +21,16 @@
           </button>
           <ul>
             <li>
-              <a href="#about-us">О нас</a>
+              <a data-id="about-us">О нас</a>
             </li>
             <li>
-              <a href="#bicycles">Виды велосипедов</a>
+              <a data-id="bicycles">Виды велосипедов</a>
             </li>
             <li>
-              <a href="#promo-video">Видео про велосипеды</a>
+              <a data-id="promo-video">Видео про велосипеды</a>
             </li>
             <li>
-              <a href="#contacts">Контакты</a>
+              <a data-id="contacts">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -55,7 +55,7 @@
               <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
               <input class="intro__form-input" type="text" id="name" placeholder="Введите Ваше Имя">
               <label class="visually-hidden" for="name">Имя</label>
-              <input class="intro__form-input" type="text" id="phone" placeholder="Введите Ваш номер телефона" required>
+              <input class="intro__form-input" type="text" id="phone" minlength="10" placeholder="Введите Ваш номер телефона" required>
               <label class="visually-hidden" for="phone">Номер</label>
               <button type="submit">Подобрать велосипед мечты</button>
             </form>

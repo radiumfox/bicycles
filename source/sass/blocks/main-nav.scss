@@ -90,6 +90,7 @@
   @include font(16px, 32px, 300);
   color: rgba($basic-light, 0.7);
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     color: rgba($basic-light, 0.9);
