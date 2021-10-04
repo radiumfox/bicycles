@@ -93,29 +93,38 @@
           <ul>
             <li>
               <picture>
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/andreas-haimer-tabl.webp 1x, img/bicycles/andreas-haimer-tabl@2x.webp 2x">
-                <source type="image/webp" srcset="img/bicycles/andreas-haimer.webp 1x, img/bicycles/andreas-haimer@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 1023px)" data-srcset="img/bicycles/andreas-haimer-tabl.webp 1x, img/bicycles/andreas-haimer-tabl@2x.webp 2x">
+                <source type="image/webp" data-srcset="img/bicycles/andreas-haimer.webp 1x, img/bicycles/andreas-haimer@2x.webp 2x">
                 <!-- 1х: 342px; 2x: 684px -->
-                <img src="img/bicycles/andreas-haimer.jpg" width="342" height="503" alt="Велосипед">
+                <img class="lazyload" data-src="img/bicycles/andreas-haimer.jpg" width="342" height="503" alt="Велосипед">
               </picture>
+              <noscript>
+                <img src="img/bicycles/andreas-haimer.jpg" width="342" height="503" alt="Велосипед">
+              </noscript>
               <p>Дорожный велосипед</p>
             </li>
             <li>
               <picture>
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/eberhard-grossgasteiger-tabl.webp 1x, img/bicycles/eberhard-grossgasteiger-tabl@2x.webp 2x">
-                <source type="image/webp" srcset="img/bicycles/eberhard-grossgasteiger.webp 1x, img/bicycles/eberhard-grossgasteiger@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 1023px)" data-srcset="img/bicycles/eberhard-grossgasteiger-tabl.webp 1x, img/bicycles/eberhard-grossgasteiger-tabl@2x.webp 2x">
+                <source type="image/webp" data-srcset="img/bicycles/eberhard-grossgasteiger.webp 1x, img/bicycles/eberhard-grossgasteiger@2x.webp 2x">
                 <!-- 1х: 342px; 2x: 684px -->
-                <img src="img/bicycles/eberhard-grossgasteiger.jpg" width="342" height="566" alt="Велосипед">
+                <img class="lazyload" data-src="img/bicycles/eberhard-grossgasteiger.jpg" width="342" height="566" alt="Велосипед">
               </picture>
+              <noscript>
+                <img src="img/bicycles/eberhard-grossgasteiger.jpg" width="342" height="566" alt="Велосипед">
+              </noscript>
               <p>Горный велосипед</p>
             </li>
             <li>
               <picture>
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/roger-goh-tabl.webp 1x, img/bicycles/roger-goh-tabl@2x.webp 2x">
-                <source type="image/webp" srcset="img/bicycles/roger-goh.webp 1x, img/bicycles/roger-goh@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 1023px)" data-srcset="img/bicycles/roger-goh-tabl.webp 1x, img/bicycles/roger-goh-tabl@2x.webp 2x">
+                <source type="image/webp" data-srcset="img/bicycles/roger-goh.webp 1x, img/bicycles/roger-goh@2x.webp 2x">
                 <!-- 1х: 342px; 2x: 684px -->
-                <img src="img/bicycles/roger-goh.jpg" width="342" height="512" alt="Велосипед">
+                <img class="lazyload" data-src="img/bicycles/roger-goh.jpg" width="342" height="512" alt="Велосипед">
               </picture>
+              <noscript>
+                <img src="img/bicycles/roger-goh.jpg" width="342" height="512" alt="Велосипед">
+              </noscript>
               <p>Детский велосипед</p>
             </li>
           </ul>
@@ -127,12 +136,15 @@
           <h2>Видео про велосипеды</h2>
           <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.</p>
           <picture>
-            <source type="image/webp" media="(max-width: 767px)" srcset="img/preview-mob.webp 1x, img/preview-mob@2x.webp 2x">
-            <source type="image/webp" media="(max-width: 1023px)" srcset="img/preview-tabl.webp 1x, img/preview-tabl@2x.webp 2x">
-            <source type="image/webp" srcset="img/preview-desk.webp 1x, img/preview-desk@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 767px)" data-srcset="img/preview-mob.webp 1x, img/preview-mob@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1023px)" data-srcset="img/preview-tabl.webp 1x, img/preview-tabl@2x.webp 2x">
+            <source type="image/webp" data-srcset="img/preview-desk.webp 1x, img/preview-desk@2x.webp 2x">
             <!-- 1х: 929px; 2x: 1858px -->
-            <img src="img/preview-desk.jpg" width="929" height="522" alt="Превью промо-ролика">
+            <img class="lazyload" data-src="img/preview-desk.jpg" width="929" height="522" alt="Превью промо-ролика">
           </picture>
+          <noscript>
+            <img src="img/preview-desk.jpg" width="929" height="522" alt="Превью промо-ролика">
+          </noscript>
           <button class="promo__button" type="button">
             <span class="visually-hidden">Запустить ролик</span>
           </button>
@@ -147,8 +159,11 @@
           <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
         </div>
         <div class="page-footer__map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533273!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1614701867694!5m2!1sru!2sru" width="957" height="530" allowfullscreen=""></iframe>
+          <iframe class="lazyload" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533273!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1614701867694!5m2!1sru!2sru" width="957" height="530" allowfullscreen=""></iframe>
         </div>
+        <noscript>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533273!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1614701867694!5m2!1sru!2sru" width="957" height="530" allowfullscreen=""></iframe>
+        </noscript>
         <ul class="page-footer__socials">
           <li>
             <a href="mailto:puteshestviemechta@gmail.ru">
