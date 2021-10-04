@@ -59,21 +59,18 @@
               <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
               <input class="intro__form-input" type="text" id="name" placeholder="Введите Ваше Имя">
               <label class="visually-hidden" for="name">Имя</label>
-              <input class="intro__form-input" type="text" id="phone" minlength="10" placeholder="Введите Ваш номер телефона" required>
+              <input class="intro__form-input" type="number" id="phone" minlength="10" placeholder="Введите Ваш номер телефона" required="">
               <label class="visually-hidden" for="phone">Номер</label>
               <button type="submit">Подобрать велосипед мечты</button>
             </form>
+            <div class="intro__success">
+              <p>Спасибо!</p>
+              <p>Очень скоро мы свяжемся с вами</p>
+              <button class="intro__success-close" type="button">Закрыть</button>
+            </div>
           </div>
         </div>
       </section>
-
-      <template id="success-message">
-        <div class="success-message">
-          <p>Спасибо!</p>
-          <p>Очень скоро мы свяжемся с вами</p>
-          <button class="success-message__close" type="button">Закрыть</button>
-        </div>
-      </template>
 
       <section class="about" id="about-us">
         <div class="about__wrapper">
@@ -146,9 +143,9 @@
           <h2>Как нас найти?</h2>
           <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
         </div>
-        <div class="page-footer__map">
+        <!-- <div class="page-footer__map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533273!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1614701867694!5m2!1sru!2sru" width="957" height="530" allowfullscreen></iframe>
-        </div>
+        </div> -->
         <ul class="page-footer__socials">
           <li>
             <a href="mailto:puteshestviemechta@gmail.ru">
@@ -163,12 +160,12 @@
               <svg width="22" height="23">
                 <use xlink:href="img/icons/sprite.svg#phone"></use>
               </svg>
-              <span >+7 (499) -784-684-46</span>
+              <span>+7 (499) -784-684-46</span>
             </a>
           </li>
         </ul>
       </div>
     </footer>
-    <script src="js/main.min.js"></script>
+    <script defer="" src="js/main.min.js"></script>
   </body>
 </html>
