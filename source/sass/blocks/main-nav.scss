@@ -1,8 +1,12 @@
 .main-nav {
   border-bottom: 1px solid rgba($basic-light, 0.2);
   padding-bottom: 9px;
+  max-width: 873px;
+  margin: 0 auto;
 
   @media (max-width: $tablet-width-only) {
+    margin: 0;
+    max-width: initial;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -20,7 +24,6 @@
     position: absolute;
     width: 320px;
     min-height: 568px;
-    height: 0;
     box-sizing: border-box;
     background-color: $basic-light;
     top: 0;
@@ -45,20 +48,20 @@
   @media (max-width: $tablet-width-only) {
     padding: 0;
     display: block;
-    transition: all 0.2s ease-in-out;
+    transition: margin 0.2s ease-in-out;
   }
 }
 
 .main-nav--opened ul {
   @media (max-width: $tablet-width-only) {
-    transition: all 0.2s ease-in-out;
+    transition: margin 0.2s ease-in-out;
     margin-top: 0;
     z-index: 1;
   }
 }
 
 .main-nav li {
-  margin-right: 20px;
+  margin-right: 122px;
 
   &:last-child {
     margin-right: 0;
@@ -100,12 +103,22 @@
     color: rgba($basic-light, 0.5);
   }
 
+  &:focus-visible {
+    outline: 1px solid $basic-light;
+  }
+
   @media (max-width: $tablet-width-only) {
     @include font(20px, 28px, 400);
     color: $basic-dark;
+    display: flex;
+    flex-shrink: 0;
 
     &:hover {
       color: $basic-dark;
+    }
+
+    &:focus-visible {
+      outline: 1px solid $basic-dark;
     }
 
     &:active {

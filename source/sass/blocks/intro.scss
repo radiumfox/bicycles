@@ -8,9 +8,10 @@
     min-height: 825px;
     height: 100%;
     background-image: url("../img/bg-desk.jpg");
+    background-color: $secondary-dark;
     background-size: cover;
     background-position: center;
-    top: -62px;
+    top: 0;
     z-index: -1;
   }
 
@@ -25,16 +26,13 @@
   max-width: 880px;
   min-height: 507px;
   margin: 0 auto;
-  padding-top: 256px;
+  padding-top: 320px;
   display: flex;
   justify-content: space-between;
 
   @media (max-width: $tablet-width-only) {
     padding-top: 0;
     flex-direction: column;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 290px 1.3fr;
     margin: 0;
     max-width: none;
   }
@@ -46,17 +44,28 @@
 
 .intro__form-wrapper {
   position: relative;
+
+  &--nojs {
+    display: none;
+  }
 }
 
 .intro__content-box {
   position: relative;
 
   @media (max-width: $tablet-width-only) {
+    position: relative;
+    padding-top: 84px;
+    padding-bottom: 80px;
+    min-height: 290px;
+    box-sizing: border-box;
+
     &::before {
       content: "";
       position: absolute;
       width: 100%;
       background-image: url("../img/bg-tabl.jpg");
+      background-color: $secondary-dark;
       background-size: cover;
       background-position: center;
       min-height: 340px;
@@ -67,23 +76,16 @@
   }
 
   @media (max-width: $mobile-width-only) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    height: 100%;
+    min-height: 340px;
+
     &::before {
       background-image: url("../img/bg-mob.jpg");
       min-height: 390px;
       top: -50px;
     }
-  }
-
-  @media (max-width: $tablet-width-only) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    position: relative;
-    padding-top: 84px;
-    padding-bottom: 80px;
-  }
-
-  @media (max-width: $mobile-width-only) {
-    padding-top: 70px;
   }
 }
 
@@ -114,6 +116,7 @@
   color: $basic-light;
   margin: 0;
   padding-bottom: 24px;
+  letter-spacing: 0.5px;
 
   @media (max-width: $tablet-width-only) {
     @include font(30px, 42px, 600);
@@ -138,8 +141,6 @@
   width: 327px;
 
   @media (max-width: $tablet-width-only) {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
     margin: 0 auto;
     padding-top: 70px;
     width: 42.2vw;
@@ -147,7 +148,7 @@
 
   @media (max-width: $mobile-width-only) {
     width: 100%;
-    max-width: 524px;
+    max-width: 324px;
     padding: 0 16px;
     box-sizing: border-box;
     padding-top: 68px;
@@ -211,15 +212,95 @@
   }
 }
 
-.intro__form button {
+.intro button {
+  @include font(15px, 21px, 600);
+  background-color: $accent-primary;
+  color: $basic-dark;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $basic-light;
+  }
+
+  &:hover {
+    background-color: $accent-hover;
+  }
+
+  @media (max-width: $tablet-width-only) {
+    &:focus-visible {
+      outline: 2px solid $basic-dark;
+    }
+  }
+}
+
+.intro__success {
+  width: 327px;
+  display: none;
+
+  &--show {
+    display: block;
+
+    @media (max-width: $tablet-width-only) {
+      margin: 70px auto 0;
+    }
+  }
+}
+
+.intro__success p:first-child {
+  @include font(22px, 28px, 600);
+  padding-bottom: 30px;
+}
+
+.intro__success p {
+  @include font(17px, 28px, 600);
+  text-align: center;
+  color: $basic-light;
+  margin: 0;
+  padding-bottom: 50px;
+
+  @media (max-width: $tablet-width-only) {
+    color: $basic-dark;
+  }
+}
+
+.intro__success-close {
   @include font(15px, 21px, 600);
   background-color: $accent-primary;
   padding: 15px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  width: 100%;
 
   &:hover {
     background-color: $accent-hover;
+  }
+}
+
+.intro__nojs {
+  max-width: 327px;
+
+  &--hide {
+    display: none;
+  }
+
+  @media (max-width: $tablet-width-only) {
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+}
+
+.intro__nojs p {
+  @include font(17px, 28px, 600);
+  text-align: center;
+  color: $basic-light;
+
+  @media (max-width: $tablet-width-only) {
+    color: $basic-dark;
   }
 }

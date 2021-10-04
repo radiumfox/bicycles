@@ -14,3 +14,4 @@ source/css/*.map
 Thumbs.db
 build
 PP
+.publish

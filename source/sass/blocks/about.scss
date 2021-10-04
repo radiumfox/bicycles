@@ -1,6 +1,6 @@
 .about__wrapper {
   max-width: 1166px;
-  margin: 150px auto 146px;
+  margin: 150px auto 136px;
 
   @media (max-width: $tablet-width-only) {
     padding: 0 10px;
@@ -45,10 +45,11 @@
 
 .about li {
   @include font(22px, 34px, 400);
-  max-width: 263px;
+  letter-spacing: -0.5px;
+  max-width: 255px;
   text-align: center;
   position: relative;
-  padding: 53px 0 0;
+  padding: 53px 0 10px;
 
   &::before {
     @include font(28px, 38px, 700);

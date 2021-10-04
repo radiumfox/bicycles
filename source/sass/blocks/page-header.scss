@@ -1,9 +1,20 @@
+.page-header--absolute {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+
+  @media (max-width: $tablet-width-only) {
+    position: relative;
+    margin: 0;
+    max-width: initial;
+  }
+}
+
 .page-header__wrapper {
-  max-width: 873px;
-  margin: 0 auto;
   padding-top: 21px;
 
   @media (max-width: $tablet-width-only) {
+    margin: 0 auto;
     max-width: 100%;
     padding: 0;
   }

@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Лендинг магазина велосипедов">
     <title>Велосипеды</title>
-    <link rel="preload" type="font/woff2" href="../fonts/opensanslight.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" type="font/woff2" href="../fonts/opensansregular.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" type="font/woff2" href="../fonts/opensanssemibold.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" type="font/woff2" href="../fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" type="font/woff2" href="fonts/opensanslight.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" type="font/woff2" href="fonts/opensansregular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" type="font/woff2" href="fonts/opensanssemibold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" type="font/woff2" href="fonts/opensansbold.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
 
   <body class="page-body">
-    <header class="page-header">
+    <header class="page-header page-header--absolute">
       <div class="page-header__wrapper">
         <nav class="main-nav main-nav--closed main-nav--nojs">
           <!-- main-nav--closed - меню закрыто, кнопка-гамбургер;
@@ -25,16 +25,16 @@
           </button>
           <ul>
             <li>
-              <a data-id="about-us">О нас</a>
+              <a data-id="about-us" href="#about-us" tabindex="0">О нас</a>
             </li>
             <li>
-              <a data-id="bicycles">Виды велосипедов</a>
+              <a data-id="bicycles"  href="#bicycles" tabindex="0">Виды велосипедов</a>
             </li>
             <li>
-              <a data-id="promo-video">Видео про велосипеды</a>
+              <a data-id="promo-video"  href="#promo-video" tabindex="0">Видео про велосипеды</a>
             </li>
             <li>
-              <a data-id="contacts">Контакты</a>
+              <a data-id="contacts"  href="#contacts" tabindex="0">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -54,26 +54,26 @@
               <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
             </div>
           </div>
-          <div class="intro__form-wrapper">
-            <form class="intro__form" action="#" method="POST">
+          <div class="intro__form-wrapper intro__form-wrapper--nojs">
+            <form class="intro__form" action="https://echo.htmlacademy.ru/" method="POST">
               <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
-              <input class="intro__form-input" type="text" id="name" placeholder="Введите Ваше Имя">
+              <input class="intro__form-input" type="text" id="name" placeholder="Введите Ваше Имя" required>
               <label class="visually-hidden" for="name">Имя</label>
-              <input class="intro__form-input" type="text" id="phone" minlength="10" placeholder="Введите Ваш номер телефона" required>
+              <input class="intro__form-input" type="number" id="phone" minlength="10" placeholder="Введите Ваш номер телефона" required>
               <label class="visually-hidden" for="phone">Номер</label>
               <button type="submit">Подобрать велосипед мечты</button>
             </form>
+            <div class="intro__success">
+              <p>Спасибо!</p>
+              <p>Очень скоро мы свяжемся с вами</p>
+              <button class="intro__success-close" type="button">Закрыть</button>
+            </div>
+          </div>
+          <div class="intro__nojs">
+            <p>Здесь была форма обратной связи, но с отключенным JavaScript она не работает :(</p>
           </div>
         </div>
       </section>
-
-      <template id="success-message">
-        <div class="success-message">
-          <p>Спасибо!</p>
-          <p>Очень скоро мы свяжемся с вами</p>
-          <button class="success-message__close" type="button">Закрыть</button>
-        </div>
-      </template>
 
       <section class="about" id="about-us">
         <div class="about__wrapper">
@@ -169,6 +169,8 @@
         </ul>
       </div>
     </footer>
+
     <script src="js/main.min.js"></script>
+
   </body>
 </html>

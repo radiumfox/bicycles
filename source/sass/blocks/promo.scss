@@ -68,6 +68,11 @@
   background-size: cover;
   left: calc(50% - 36px);
   bottom: 230px;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 1px solid $basic-light;
+  }
 
   &::before {
     content: "";
