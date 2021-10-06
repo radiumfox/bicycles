@@ -1,4 +1,7 @@
 let requestForm;
+const phoneRegExp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+let submitButton;
+
 const introFormWrapper = document.querySelector('.intro__form-wrapper');
 const introNoJs = document.querySelector('.intro__nojs');
 const modalSuccess = document.querySelector('.intro__success');
@@ -9,6 +12,24 @@ const inputName = document.querySelector('#name');
 if (introFormWrapper) {
   requestForm = introFormWrapper.querySelector('form');
   introFormWrapper.classList.remove('intro__form-wrapper--nojs');
+  submitButton = requestForm.querySelector('button');
+
+  const onPhoneInput = () => {
+    if(inputPhone.value){
+      if (phoneRegExp.test(inputPhone.value)){
+        introFormWrapper.classList.remove('intro__form-wrapper--disabled');
+        submitButton.removeAttribute('disabled');
+      } else {
+        introFormWrapper.classList.add('intro__form-wrapper--disabled');
+        submitButton.setAttribute('disabled', 'disabled');
+      }
+    } else {
+      introFormWrapper.classList.remove('intro__form-wrapper--disabled');
+      submitButton.removeAttribute('disabled');
+    }
+  };
+
+  inputPhone.addEventListener("input", onPhoneInput);
 }
 
 if (introNoJs) {
