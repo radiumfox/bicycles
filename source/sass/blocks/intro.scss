@@ -158,6 +158,10 @@
     outline: none;
   }
 
+  &:focus-visible {
+    outline: 2px solid $basic-light;
+  }
+
   &--invalid:focus {
     background-color: $input-invalid;
     border-color: $input-invalid;
