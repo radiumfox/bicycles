@@ -14,7 +14,6 @@ const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 const del = require('del');
 const concat = require('gulp-concat');
-const terser = require('gulp-terser');
 const ghPages = require('gulp-gh-pages');
 
 gulp.task('css', function () {
@@ -34,9 +33,6 @@ gulp.task('scripts', function () {
   return gulp.src('source/js/*.js')
       .pipe(plumber())
       .pipe(concat('main.js'))
-      .pipe(gulp.dest('build/js/'))
-      .pipe(terser())
-      .pipe(concat('main.min.js'))
       .pipe(gulp.dest('build/js/'))
       .pipe(server.stream());
 });

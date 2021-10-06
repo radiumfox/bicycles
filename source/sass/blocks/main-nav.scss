@@ -22,14 +22,14 @@
 .main-nav ul {
   @include reset-list;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 0 19px;
 
   @media (max-width: $tablet-width-only) {
     position: absolute;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     box-sizing: border-box;
     background-color: $basic-light;
     top: 0;
@@ -37,6 +37,7 @@
     box-shadow: 0 1px 30px rgba($basic-dark, 0.1);
     display: none;
     padding: 0;
+    overflow-y: scroll;
   }
 }
 
@@ -48,7 +49,8 @@
 }
 
 .main-nav li {
-  margin-right: 122px;
+  margin-right: 134px;
+  max-width: 300px;
 
   &:last-child {
     margin-right: 0;
@@ -64,6 +66,7 @@
     background-repeat: no-repeat;
     background-position: 97%;
     cursor: pointer;
+    max-width: 100%;
 
     &:last-child {
       margin-bottom: 0;
@@ -202,7 +205,11 @@
 }
 
 .main-nav--nojs.main-nav {
-  min-height: 0;
+  @media (max-width: $tablet-width-only) {
+    min-height: 0;
+    position: static;
+    padding-top: 70px;
+  }
 }
 
 .main-nav--nojs ul {
@@ -212,6 +219,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: fit-content;
     box-shadow: none;
     margin-bottom: 20px;
   }

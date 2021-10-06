@@ -35,7 +35,7 @@
   @include reset-list;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   counter-reset: section;
 
   @media (max-width: $tablet-width-only) {
@@ -50,6 +50,15 @@
   text-align: center;
   position: relative;
   padding: 53px 0 10px;
+  margin-right: 45px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:nth-child(n + 4) {
+    margin-right: 0;
+  }
 
   &::before {
     @include font(28px, 38px, 700);
@@ -66,6 +75,7 @@
     @include font(22px, 34px, 400);
     padding: 53px 10px 40px;
     letter-spacing: -0.5px;
+    margin-right: 0;
   }
 
   @media (max-width: $mobile-width-only) {
