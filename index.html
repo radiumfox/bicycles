@@ -13,67 +13,65 @@
   </head>
 
   <body class="page-body">
-    <header class="page-header page-header--absolute">
+    <header class="page-header">
       <div class="page-header__wrapper">
-        <nav class="main-nav main-nav--closed main-nav--nojs">
-          <!-- main-nav--closed - меню закрыто, кнопка-гамбургер;
+        <nav class="main-nav main-nav--nojs">
+          <!-- начиная с планшетной ширины:
+            main-nav без модификаторов - меню закрыто, кнопка-гамбургер;
             main-nav--opened - меню открыто, кнопка-крестик;
-            main-nav--no-js - поведение меню при отключенном JS, кнопок нет -->
-          <img src="img/logo.svg" width="68" height="20" alt="Логотип">
-          <button class="main-nav__toggle" type="button">
-            <span class="visually-hidden">Открыть меню</span>
-          </button>
+            main-nav--no-js - меню в потоке, кнопок нет -->
+          <button class="main-nav__toggle" type="button" aria-label="Открыть меню"></button>
           <ul>
             <li>
-              <a data-id="about-us" href="#about-us" tabindex="0">О нас</a>
+              <a class="main-nav__link" href="#about-us">О нас</a>
             </li>
             <li>
-              <a data-id="bicycles" href="#bicycles" tabindex="0">Виды велосипедов</a>
+              <a class="main-nav__link" href="#bicycles">Виды велосипедов</a>
             </li>
             <li>
-              <a data-id="promo-video" href="#promo-video" tabindex="0">Видео про велосипеды</a>
+              <a class="main-nav__link" href="#promo-video">Видео про велосипеды</a>
             </li>
             <li>
-              <a data-id="contacts" href="#contacts" tabindex="0">Контакты</a>
+              <a class="main-nav__link" href="#contacts">Контакты</a>
             </li>
           </ul>
         </nav>
-      </div>
-    </header>
 
-    <main class="page-main">
-      <h1 class="visually-hidden">Магазин велосипедов</h1>
-
-      <section class="intro">
-        <div class="intro__wrapper">
-          <h2 class="visually-hidden">Вводная информация</h2>
-          <div class="intro__content-box">
-            <div class="intro__content">
-              <img src="img/logo.svg" width="68" height="20" alt="Логотип">
+        <section class="page-header__intro intro">
+          <div class="intro__wrapper">
+            <h2 class="visually-hidden">Вводная информация</h2>
+            <div class="intro__content-box">
+              <a class="intro__logo">
+                <img src="img/logo.svg" width="68" height="20" alt="Логотип">
+              </a>
               <h3>Мы продаем велосипеды</h3>
               <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
             </div>
-          </div>
-          <div class="intro__form-wrapper intro__form-wrapper--nojs">
-            <form class="intro__form" action="https://echo.htmlacademy.ru/" method="POST">
-              <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
-              <input class="intro__form-input" type="text" id="name" placeholder="Введите Ваше Имя" required="">
-              <label class="visually-hidden" for="name">Имя</label>
-              <input class="intro__form-input" type="number" id="phone" minlength="10" placeholder="Введите Ваш номер телефона" required="">
-              <label class="visually-hidden" for="phone">Номер</label>
-              <button type="submit">Подобрать велосипед мечты</button>
-            </form>
+            <div class="intro__form-wrapper intro__form-wrapper--nojs">
+              <form action="https://echo.htmlacademy.ru/" method="POST">
+                <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
+                <input type="text" id="name" placeholder="Введите Ваше Имя" required="">
+                <label class="visually-hidden" for="name">Имя</label>
+                <input type="tel" id="phone" minlength="10" placeholder="Введите Ваш номер телефона" required="">
+                <label class="visually-hidden" for="phone">Номер</label>
+                <button type="submit">Подобрать велосипед мечты</button>
+              </form>
+            </div>
             <div class="intro__success">
               <p>Спасибо!</p>
               <p>Очень скоро мы свяжемся с вами</p>
               <button class="intro__success-close" type="button">Закрыть</button>
             </div>
+            <div class="intro__nojs">
+              <p>Здесь была форма обратной связи, но с отключенным JavaScript она не работает :(</p>
+            </div>
           </div>
-          <div class="intro__nojs">
-            <p>Здесь была форма обратной связи, но с отключенным JavaScript она не работает :(</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <h1 class="visually-hidden">Магазин велосипедов</h1>
 
       <section class="about" id="about-us">
         <div class="about__wrapper">
@@ -93,7 +91,6 @@
           <ul>
             <li>
               <picture>
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/andreas-haimer-tabl.webp 1x, img/bicycles/andreas-haimer-tabl@2x.webp 2x">
                 <source type="image/webp" srcset="img/bicycles/andreas-haimer.webp 1x, img/bicycles/andreas-haimer@2x.webp 2x">
                 <!-- 1х: 342px; 2x: 684px -->
                 <img src="img/bicycles/andreas-haimer.jpg" width="342" height="503" alt="Велосипед">
@@ -102,7 +99,6 @@
             </li>
             <li>
               <picture>
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/eberhard-grossgasteiger-tabl.webp 1x, img/bicycles/eberhard-grossgasteiger-tabl@2x.webp 2x">
                 <source type="image/webp" srcset="img/bicycles/eberhard-grossgasteiger.webp 1x, img/bicycles/eberhard-grossgasteiger@2x.webp 2x">
                 <!-- 1х: 342px; 2x: 684px -->
                 <img src="img/bicycles/eberhard-grossgasteiger.jpg" width="342" height="566" alt="Велосипед">
@@ -111,7 +107,6 @@
             </li>
             <li>
               <picture>
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/bicycles/roger-goh-tabl.webp 1x, img/bicycles/roger-goh-tabl@2x.webp 2x">
                 <source type="image/webp" srcset="img/bicycles/roger-goh.webp 1x, img/bicycles/roger-goh@2x.webp 2x">
                 <!-- 1х: 342px; 2x: 684px -->
                 <img src="img/bicycles/roger-goh.jpg" width="342" height="512" alt="Велосипед">
@@ -127,15 +122,11 @@
           <h2>Видео про велосипеды</h2>
           <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.</p>
           <picture>
-            <source type="image/webp" media="(max-width: 767px)" srcset="img/preview-mob.webp 1x, img/preview-mob@2x.webp 2x">
-            <source type="image/webp" media="(max-width: 1023px)" srcset="img/preview-tabl.webp 1x, img/preview-tabl@2x.webp 2x">
             <source type="image/webp" srcset="img/preview-desk.webp 1x, img/preview-desk@2x.webp 2x">
             <!-- 1х: 929px; 2x: 1858px -->
             <img src="img/preview-desk.jpg" width="929" height="522" alt="Превью промо-ролика">
           </picture>
-          <button class="promo__button" type="button">
-            <span class="visually-hidden">Запустить ролик</span>
-          </button>
+          <button class="promo__button" type="button" aria-label="Запустить ролик"></button>
         </div>
       </section>
     </main>
@@ -153,7 +144,7 @@
           <li>
             <a href="mailto:puteshestviemechta@gmail.ru">
               <svg width="26" height="20">
-                <use xlink:href="img/icons/sprite.svg#mail"></use>
+                <use xlink:href="img/sprite.svg#mail"></use>
               </svg>
               <span>puteshestviemechta@gmail.ru</span>
             </a>
@@ -161,7 +152,7 @@
           <li>
             <a href="tel:+749978468446">
               <svg width="22" height="23">
-                <use xlink:href="img/icons/sprite.svg#phone"></use>
+                <use xlink:href="img/sprite.svg#phone"></use>
               </svg>
               <span>+7 (499) -784-684-46</span>
             </a>
@@ -170,7 +161,7 @@
       </div>
     </footer>
 
-    <script src="js/main.min.js"></script>
+    <script src="js/main.js"></script>
 
   </body>
 </html>

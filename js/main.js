@@ -1,13 +1,19 @@
+let requestForm;
 const introFormWrapper = document.querySelector('.intro__form-wrapper');
 const introNoJs = document.querySelector('.intro__nojs');
-const requestForm = introFormWrapper.querySelector('.intro__form');
 const modalSuccess = document.querySelector('.intro__success');
-const closeButton = modalSuccess.querySelector('.intro__success-close');
-const inputPhone = introFormWrapper.querySelector('#phone');
-const inputName = introFormWrapper.querySelector('#name');
+const closeButton = document.querySelector('.intro__success-close');
+const inputPhone = document.querySelector('#phone');
+const inputName = document.querySelector('#name');
 
-introFormWrapper.classList.remove('intro__form-wrapper--nojs');
-introNoJs.classList.add('intro__nojs--hide');
+if (introFormWrapper) {
+  requestForm = introFormWrapper.querySelector('form');
+  introFormWrapper.classList.remove('intro__form-wrapper--nojs');
+}
+
+if (introNoJs) {
+  introNoJs.classList.add('intro__nojs--hide');
+}
 
 let isStorageSupport = true;
 let phoneStorage = '';
@@ -26,52 +32,57 @@ const showSuccessMessage = () => {
 
 const hideSuccessMessage = () => {
   modalSuccess.classList.remove('intro__success--show');
-  requestForm.classList.remove('intro__form--hide');
+  introFormWrapper.classList.remove('intro__form-wrapper--hide');
 };
 
-requestForm.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-  showSuccessMessage();
+if (requestForm) {
+  requestForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    showSuccessMessage();
 
-  if (isStorageSupport) {
-    if (inputPhone.value) {
-      localStorage.setItem('phoneNumber', inputPhone.value);
+    if (isStorageSupport) {
+      if (inputPhone.value) {
+        localStorage.setItem('phoneNumber', inputPhone.value);
+      }
+      if (inputName.value) {
+        localStorage.setItem('name', inputName.value);
+      }
     }
-    if (inputName.value) {
-      localStorage.setItem('name', inputName.value);
-    }
-  }
-  requestForm.classList.add('intro__form--hide');
-  closeButton.addEventListener('click', hideSuccessMessage);
-});
+
+    introFormWrapper.classList.add('intro__form-wrapper--hide');
+    closeButton.addEventListener('click', hideSuccessMessage);
+  });
+}
 
 const navMain = document.querySelector('.main-nav');
 const navToggle = document.querySelector('.main-nav__toggle');
 const body = document.querySelector('.page-body');
-const navLinks = navMain.querySelectorAll('a');
+const navLinks = document.querySelectorAll('.main-nav__link');
 
-navMain.classList.remove('main-nav--nojs');
+if (navMain) {
+  navMain.classList.remove('main-nav--nojs');
 
-navToggle.addEventListener('click', () => {
-  if (navMain.classList.contains('main-nav--closed')) {
-    navMain.classList.remove('main-nav--closed');
-    navMain.classList.add('main-nav--opened');
-    body.classList.add('page-body--no-scroll');
-  } else {
-    navMain.classList.add('main-nav--closed');
-    navMain.classList.remove('main-nav--opened');
-    body.classList.remove('page-body--no-scroll');
-  }
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', (evt)=> {
-    link.removeAttribute('href');
-    navMain.classList.add('main-nav--closed');
-    navMain.classList.remove('main-nav--opened');
-    body.classList.remove('page-body--no-scroll');
-    const id = evt.target.dataset.id;
-    const element = document.querySelector(`#${id}`);
-    element.scrollIntoView({block: 'center', behavior: 'smooth'});
+  navToggle.addEventListener('click', () => {
+    if (!navMain.classList.contains('main-nav--opened')) {
+      navMain.classList.add('main-nav--opened');
+      body.classList.add('page-body--no-scroll');
+    } else {
+      navMain.classList.remove('main-nav--opened');
+      body.classList.remove('page-body--no-scroll');
+    }
   });
-});
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (evt)=> {
+      evt.preventDefault();
+      const id = link.getAttribute('href');
+      body.classList.remove('page-body--no-scroll');
+      navMain.classList.remove('main-nav--opened');
+
+      document.querySelector(id).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+}
