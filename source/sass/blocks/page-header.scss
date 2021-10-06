@@ -2,6 +2,8 @@
   background-image: url("../img/bg-desk.jpg");
   background-size: cover;
   background-position: center;
+  background-color: $secondary-dark;
+  height: fit-content;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/bg-desk@2x.jpg");
@@ -9,6 +11,7 @@
 
   @media (max-width: $tablet-width-only) {
     background-image: none;
+    background-color: $basic-light;
   }
 }
 

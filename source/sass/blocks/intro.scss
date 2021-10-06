@@ -19,14 +19,6 @@
   }
 }
 
-.intro__form-wrapper {
-  position: relative;
-
-  &--nojs {
-    display: none;
-  }
-}
-
 .intro__content-box {
   position: relative;
   max-width: 393px;
@@ -101,6 +93,14 @@
   }
 }
 
+.intro__form-wrapper {
+  position: relative;
+
+  &--nojs {
+    display: none;
+  }
+}
+
 .intro form {
   display: flex;
   flex-direction: column;
@@ -109,12 +109,11 @@
   @media (max-width: $tablet-width-only) {
     margin: 0 auto;
     padding-top: 70px;
-    width: 42.2vw;
+    width: 324px;
   }
 
   @media (max-width: $mobile-width-only) {
     width: 100%;
-    max-width: 324px;
     padding: 0 16px;
     box-sizing: border-box;
     padding-top: 68px;
@@ -140,6 +139,7 @@
 
   @media (max-width: $mobile-width-only) {
     padding-bottom: 24px;
+    margin: 0 auto;
   }
 }
 
@@ -162,16 +162,6 @@
     outline: 2px solid $basic-light;
   }
 
-  &--invalid:focus {
-    background-color: $input-invalid;
-    border-color: $input-invalid;
-  }
-
-  &--invalid {
-    background-color: $input-invalid;
-    border-color: $input-invalid;
-  }
-
   @media (max-width: $tablet-width-only) {
     padding: 14px 21px;
     margin-bottom: 21px;
@@ -183,7 +173,7 @@
   }
 }
 
-.intro button {
+.intro__form-wrapper button {
   @include font(15px, 21px, 600);
   background-color: $accent-primary;
   color: $basic-dark;
@@ -205,6 +195,17 @@
   @media (max-width: $tablet-width-only) {
     &:focus-visible {
       outline: 2px solid $basic-dark;
+    }
+  }
+}
+
+.intro__form-wrapper--disabled {
+  button {
+    background-color: $special-grey;
+    cursor: auto;
+
+    &:hover {
+      background-color: $special-grey;
     }
   }
 }

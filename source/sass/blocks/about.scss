@@ -1,5 +1,5 @@
 .about__wrapper {
-  max-width: 1166px;
+  max-width: 1170px;
   margin: 150px auto 140px;
 
   @media (max-width: $tablet-width-only) {
@@ -33,13 +33,19 @@
 
 .about ul {
   @include reset-list;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  column-gap: 18px;
+  grid-template-columns: repeat(4, auto);
   counter-reset: section;
 
   @media (max-width: $tablet-width-only) {
     justify-content: space-evenly;
+    grid-template-columns: auto auto;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -49,8 +55,8 @@
   max-width: 255px;
   text-align: center;
   position: relative;
-  padding: 53px 0 10px;
-  margin-right: 45px;
+  padding: 53px 10px 10px;
+  justify-self: center;
 
   &:last-child {
     margin-right: 0;
@@ -73,7 +79,7 @@
 
   @media (max-width: $tablet-width-only) {
     @include font(22px, 34px, 400);
-    padding: 53px 10px 40px;
+    padding: 53px 0 40px;
     letter-spacing: -0.5px;
     margin-right: 0;
   }
