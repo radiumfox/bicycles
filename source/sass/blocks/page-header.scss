@@ -1,12 +1,14 @@
-.page-header--absolute {
-  position: absolute;
-  width: 100%;
-  z-index: 10;
+.page-header {
+  background-image: url("../img/bg-desk.jpg");
+  background-size: cover;
+  background-position: center;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/bg-desk@2x.jpg");
+  }
 
   @media (max-width: $tablet-width-only) {
-    position: relative;
-    margin: 0;
-    max-width: initial;
+    background-image: none;
   }
 }
 

@@ -1,31 +1,32 @@
-'use strict';
 const navMain = document.querySelector('.main-nav');
 const navToggle = document.querySelector('.main-nav__toggle');
 const body = document.querySelector('.page-body');
-const navLinks = navMain.querySelectorAll('a');
+const navLinks = document.querySelectorAll('.main-nav__link');
 
-navMain.classList.remove('main-nav--nojs');
+if (navMain) {
+  navMain.classList.remove('main-nav--nojs');
 
-navToggle.addEventListener('click', () => {
-  if (navMain.classList.contains('main-nav--closed')) {
-    navMain.classList.remove('main-nav--closed');
-    navMain.classList.add('main-nav--opened');
-    body.classList.add('page-body--no-scroll');
-  } else {
-    navMain.classList.add('main-nav--closed');
-    navMain.classList.remove('main-nav--opened');
-    body.classList.remove('page-body--no-scroll');
-  }
-});
-
-navLinks.forEach(link => {
-  link.addEventListener('click', (evt)=> {
-    link.removeAttribute('href');
-    navMain.classList.add('main-nav--closed');
-    navMain.classList.remove('main-nav--opened');
-    body.classList.remove('page-body--no-scroll');
-    const id = evt.target.dataset.id;
-    const element = document.querySelector(`#${id}`);
-    element.scrollIntoView({block: 'center', behavior: 'smooth'});
+  navToggle.addEventListener('click', () => {
+    if (!navMain.classList.contains('main-nav--opened')) {
+      navMain.classList.add('main-nav--opened');
+      body.classList.add('page-body--no-scroll');
+    } else {
+      navMain.classList.remove('main-nav--opened');
+      body.classList.remove('page-body--no-scroll');
+    }
   });
-});
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (evt)=> {
+      evt.preventDefault();
+      const id = link.getAttribute('href');
+      body.classList.remove('page-body--no-scroll');
+      navMain.classList.remove('main-nav--opened');
+
+      document.querySelector(id).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+}

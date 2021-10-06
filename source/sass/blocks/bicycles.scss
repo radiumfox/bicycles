@@ -5,7 +5,7 @@
 .bicycles__wrapper {
   max-width: 1245px;
   margin: 0 auto;
-  padding: 155px 10px 147px;
+  padding: 153px 10px 147px;
   overflow-x: hidden;
 
   @media (max-width: $tablet-width-only) {
@@ -13,7 +13,7 @@
   }
 
   @media (max-width: $mobile-width-only) {
-    padding: 52px 16px 52px;
+    padding: 50px 16px 52px;
   }
 }
 
@@ -35,6 +35,7 @@
   @media (max-width: $intermediate-width) {
     width: 342px;
     height: 512px;
+    object-position: 0 -60px;
   }
 
   @media (max-width: $tablet-width-only) {
@@ -46,7 +47,7 @@
 .bicycles h2 {
   @include font(30px, 30px, 600);
   text-align: center;
-  padding-bottom: 57px;
+  padding-bottom: 54px;
   margin: 0;
 
   @media (max-width: $tablet-width-only) {
@@ -58,18 +59,19 @@
 .bicycles li {
   position: relative;
   z-index: 10;
+  max-width: 342px;
 
   @media (max-width: $intermediate-width) {
     padding-bottom: 52px;
   }
 
   @media (max-width: $mobile-width-only) {
-    padding-bottom: 44px;
+    padding-bottom: 41px;
   }
 }
 
 .bicycles li:nth-child(even) {
-  padding-top: 30px;
+  padding-top: 32px;
 
   &::before,
   &::after {
@@ -143,10 +145,6 @@
   }
 }
 
-.bicycles picture {
-  z-index: 10;
-}
-
 .bicycles li:first-child {
   &::after {
     content: "";
@@ -181,15 +179,15 @@
   @include font(22px, 34px, 600);
   text-align: center;
   margin: 0;
-  padding-top: 20px;
+  padding-top: 16px;
   letter-spacing: -0.5px;
 
   @media (max-width: $tablet-width-only) {
-    padding-top: 17px;
+    padding-top: 10px;
     letter-spacing: -0.5px;
   }
 
   @media (max-width: $mobile-width-only) {
-    padding-top: 20px;
+    padding-top: 13px;
   }
 }

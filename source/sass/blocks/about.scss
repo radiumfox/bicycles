@@ -1,6 +1,6 @@
 .about__wrapper {
   max-width: 1166px;
-  margin: 150px auto 136px;
+  margin: 150px auto 140px;
 
   @media (max-width: $tablet-width-only) {
     padding: 0 10px;
@@ -70,7 +70,8 @@
 
   @media (max-width: $mobile-width-only) {
     @include font(18px, 34px, 400);
+    max-width: 280px;
     padding-bottom: 40px;
-    padding-top: 50px;
+    padding-top: 51px;
   }
 }

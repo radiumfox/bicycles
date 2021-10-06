@@ -1,32 +1,8 @@
-.intro {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    min-height: 825px;
-    height: 100%;
-    background-image: url("../img/bg-desk.jpg");
-    background-color: $secondary-dark;
-    background-size: cover;
-    background-position: center;
-    top: 0;
-    z-index: -1;
-  }
-
-  @media (max-width: $tablet-width-only) {
-    &::before {
-      width: 0;
-    }
-  }
-}
-
 .intro__wrapper {
   max-width: 880px;
-  min-height: 507px;
   margin: 0 auto;
-  padding-top: 320px;
+  padding-top: 258px;
+  padding-bottom: 240px;
   display: flex;
   justify-content: space-between;
 
@@ -35,6 +11,7 @@
     flex-direction: column;
     margin: 0;
     max-width: none;
+    padding-bottom: 0;
   }
 
   @media (max-width: $mobile-width-only) {
@@ -52,66 +29,41 @@
 
 .intro__content-box {
   position: relative;
-
-  @media (max-width: $tablet-width-only) {
-    position: relative;
-    padding-top: 84px;
-    padding-bottom: 80px;
-    min-height: 290px;
-    box-sizing: border-box;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      background-image: url("../img/bg-tabl.jpg");
-      background-color: $secondary-dark;
-      background-size: cover;
-      background-position: center;
-      min-height: 340px;
-      height: 100%;
-      top: -50px;
-      z-index: -1;
-    }
-  }
-
-  @media (max-width: $mobile-width-only) {
-    padding-top: 70px;
-    padding-bottom: 70px;
-    height: 100%;
-    min-height: 340px;
-
-    &::before {
-      background-image: url("../img/bg-mob.jpg");
-      min-height: 390px;
-      top: -50px;
-    }
-  }
-}
-
-.intro__content {
   max-width: 393px;
 
   @media (max-width: $tablet-width-only) {
-    max-width: 435px;
-    margin: 0 auto;
+    max-width: 100%;
     text-align: center;
+    position: static;
+    padding-top: 134px;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    background-image: url("../img/bg-tabl.jpg");
+    background-color: $secondary-dark;
+    background-size: cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-tabl@2x.jpg");
+    }
   }
 
   @media (max-width: $mobile-width-only) {
-    padding: 0 16px;
+    background-image: url("../img/bg-mob.jpg");
+    background-color: $secondary-dark;
+    background-size: cover;
+    padding: 120px 16px 70px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-mob@2x.jpg");
+    }
   }
 }
 
-.intro__content img {
+.intro img {
   padding-bottom: 20px;
-
-  @media (max-width: $tablet-width-only) {
-    display: none;
-  }
 }
 
-.intro__content h3 {
+.intro h3 {
   @include font(46px, 64px, 600);
   color: $basic-light;
   margin: 0;
@@ -124,18 +76,32 @@
   }
 }
 
-.intro__content p {
+.intro p {
   @include font(20px, 32px, 300);
   color: rgba($basic-light, 0.8);
   margin: 0;
 
-
   @media (max-width: $tablet-width-only) {
     @include font(18px, 32px, 300);
+    max-width: 435px;
+    margin: 0 auto;
   }
 }
 
-.intro__form {
+.intro__logo {
+  @media (max-width: $tablet-width-only) {
+    position: absolute;
+    top: 25px;
+    left: 21px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    top: 25px;
+    left: 16px;
+  }
+}
+
+.intro form {
   display: flex;
   flex-direction: column;
   width: 327px;
@@ -155,11 +121,11 @@
   }
 }
 
-.intro__form--hide {
+.intro__form-wrapper--hide {
   display: none;
 }
 
-.intro__form p {
+.intro__form-wrapper p {
   @include font(17px, 28px, 600);
   color: $basic-light;
   text-align: center;
@@ -177,10 +143,10 @@
   }
 }
 
-.intro__form-input {
+.intro__form-wrapper input {
   @include placeholder;
   background-color: $basic-light;
-  padding: 15px 29px;
+  padding: 15px 29px 13px;
   border-radius: 6px;
   border: 1px solid $special-grey;
   margin-bottom: 20px;
@@ -243,10 +209,15 @@
   display: none;
 
   &--show {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media (max-width: $tablet-width-only) {
       margin: 70px auto 0;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
     }
   }
 }
@@ -279,6 +250,10 @@
 
   &:hover {
     background-color: $accent-hover;
+  }
+
+  @media (max-width: $tablet-width-only) {
+    max-width: 320px;
   }
 }
 
