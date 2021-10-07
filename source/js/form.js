@@ -17,15 +17,14 @@ if (introFormWrapper) {
   const onPhoneInput = () => {
     if(inputPhone.value){
       if (phoneRegExp.test(inputPhone.value)){
-        introFormWrapper.classList.remove('intro__form-wrapper--disabled');
-        submitButton.removeAttribute('disabled');
+        inputPhone.setCustomValidity('');
+        inputPhone.reportValidity();
       } else {
-        introFormWrapper.classList.add('intro__form-wrapper--disabled');
-        submitButton.setAttribute('disabled', 'disabled');
+        inputPhone.setCustomValidity('В это поле нельзя вводить буквы');
+        inputPhone.reportValidity();
       }
     } else {
-      introFormWrapper.classList.remove('intro__form-wrapper--disabled');
-      submitButton.removeAttribute('disabled');
+      inputPhone.setCustomValidity('');
     }
   };
 

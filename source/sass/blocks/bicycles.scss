@@ -3,7 +3,7 @@
 }
 
 .bicycles__wrapper {
-  max-width: 1245px;
+  max-width: 1230px;
   margin: 0 auto;
   padding: 153px 10px 128px;
   overflow-x: hidden;
@@ -55,7 +55,7 @@
   }
 }
 
-.bicycles__item {
+.bicycles li {
   position: relative;
   z-index: 2;
   max-width: 342px;
@@ -70,8 +70,8 @@
   }
 }
 
-.bicycles__item:nth-child(3n + 2) {
-  padding-top: 32px;
+.bicycles li:nth-child(3n + 2) {
+  padding-top: 34px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -87,7 +87,7 @@
 
   &::before {
     bottom: 91%;
-    left: -19px;
+    left: -16px;
 
     @media (max-width: $intermediate-width) {
       top: -20px;
@@ -95,8 +95,8 @@
   }
 
   &::after {
-    bottom: 61px;
-    right: -22px;
+    bottom: 54px;
+    right: -20px;
 
     @media (max-width: $intermediate-width) {
       bottom: 90px;
@@ -128,8 +128,7 @@
   }
 }
 
-
-.bicycles__item:nth-child(3n) {
+.bicycles li:nth-child(3n) {
   &::after {
     content: "";
     position: absolute;
@@ -137,7 +136,7 @@
     height: 61px;
     border: 17px solid $accent-primary;
     border-radius: 50%;
-    right: -10%;
+    right: -8%;
     top: -35px;
   }
 
@@ -149,19 +148,21 @@
       width: 42px;
       height: 42px;
       top: -21px;
-      right: -24px;
+      right: -20px;
     }
   }
 
   @media (max-width: $mobile-width-only) {
+    padding-bottom: 41px;
+
     &::after {
-      top: -19px;
-      right: -15px;
+      top: -20px;
+      right: -12px;
     }
   }
 }
 
-.bicycles__item:nth-child(3n + 1) {
+.bicycles li:nth-child(3n + 1) {
   &::after {
     content: "";
     position: absolute;
@@ -169,8 +170,8 @@
     height: 126px;
     border: 27px solid $accent-primary;
     border-radius: 50%;
-    left: -16%;
-    top: calc(35% - 68px);
+    left: -15%;
+    top: calc(35% - 70px);
     z-index: -1;
   }
 
@@ -191,8 +192,12 @@
   }
 }
 
-.bicycles__item:last-child {
+.bicycles li:last-child {
   padding-top: 0;
+
+  @media (max-width: $mobile-width-only) {
+    padding-bottom: 0;
+  }
 }
 
 
@@ -200,7 +205,7 @@
   @include font(22px, 34px, 600);
   text-align: center;
   margin: 0;
-  padding-top: 16px;
+  padding-top: 14px;
   letter-spacing: -0.5px;
 
   @media (max-width: $tablet-width-only) {

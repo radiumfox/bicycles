@@ -165,6 +165,10 @@
   @media (max-width: $tablet-width-only) {
     padding: 14px 21px;
     margin-bottom: 21px;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   @media (max-width: $mobile-width-only) {
@@ -194,18 +198,7 @@
 
   @media (max-width: $tablet-width-only) {
     &:focus-visible {
-      outline: 2px solid $basic-dark;
-    }
-  }
-}
-
-.intro__form-wrapper--disabled {
-  button {
-    background-color: $special-grey;
-    cursor: auto;
-
-    &:hover {
-      background-color: $special-grey;
+      outline: 1px solid rgba($basic-dark, 0.4);
     }
   }
 }

@@ -36,7 +36,8 @@
     "start": "gulp start",
     "images": "gulp images && gulp webp",
     "sprite": "gulp sprite",
-    "scripts": "gulp scripts"
+    "scripts": "gulp scripts",
+    "styles": "gulp css"
   },
   "browserslist": [
     "last 2 versions",
